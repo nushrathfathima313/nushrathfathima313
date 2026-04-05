@@ -1,12 +1,84 @@
 import React, { useState } from 'react';
-import { pricingPlans } from '../../data/mockData';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
-const PricingSection = () => {
-  const [isCustomResume, setIsCustomResume] = useState(true);
-  const [expandedPlan, setExpandedPlan] = useState(null);
+const plans = [
+  {
+    name: 'Falcon',
+    price: 269,
+    duration: '30 days',
+    perDay: '~$8.9',
+    jobs: '780 jobs',
+    description: 'Comprehensive job search with resume editing for each application.',
+    clientDelegated: true,
+    popular: false,
+    features: [
+      '780 jobs for 30 days',
+      '30+ Applications a day',
+      'Resume Editing for Each Application',
+      'Cover Letter Customization',
+      '1+ Guaranteed Interviews',
+      'No Limit on Job titles or Categories',
+    ],
+    extraFeatures: [
+      'Google Drive & WhatsApp Updates',
+      'Submission Proofs for Every Application',
+      'On-Demand Job Applications',
+    ],
+  },
+  {
+    name: 'Premium',
+    price: 499,
+    duration: '60 days',
+    perDay: '~$8.9',
+    jobs: '~1.5k jobs',
+    description: 'The ultimate package for a comprehensive job search strategy.',
+    popular: true,
+    features: [
+      '~1.5k jobs for 60 days',
+      '30+ Applications a day',
+      'Resume Editing for Each Application',
+      'Cover Letter Customization',
+      '2+ Guaranteed Interviews',
+      'No Limit on Job titles or Categories',
+      'Dedicated Human Application Expert',
+    ],
+    extraFeatures: [
+      'Google Drive & WhatsApp Updates',
+      'Submission Proofs for Every Application',
+      'On-Demand Job Applications',
+      'Priority Support',
+    ],
+  },
+  {
+    name: 'Premium Plus',
+    price: 1399,
+    duration: '120 days',
+    perDay: '~$11.6',
+    jobs: '~3.1k jobs',
+    description: 'All-inclusive service with unlimited revisions.',
+    popular: false,
+    features: [
+      'Everything in Premium and',
+      '3120 jobs for 120 days',
+      '30+ Applications a day',
+      'Resume Editing for Each Application',
+      'Cover Letter Customization',
+      '10+ Guaranteed Interviews',
+      'Access to 2k+ Jobnexa Recruiter Database',
+      'Recruiter & Hiring Manager Outreach',
+    ],
+    extraFeatures: [
+      'Google Drive & WhatsApp Updates',
+      'Submission Proofs for Every Application',
+      'On-Demand Job Applications',
+      'Priority Support',
+      'Personalized Website',
+    ],
+  },
+];
 
-  const plans = isCustomResume ? pricingPlans.customResume : pricingPlans.noCustomResume;
+const PricingSection = () => {
+  const [expandedPlan, setExpandedPlan] = useState(null);
 
   return (
     <section id="pricing" className="py-20 bg-white">
@@ -19,38 +91,6 @@ const PricingSection = () => {
           <p className="text-gray-500">
             Simple, transparent pricing. Choose the plan that's right for your career journey.
           </p>
-        </div>
-
-        {/* Toggle Custom Resume */}
-        <div className="flex justify-center mb-10">
-          <div className="bg-gray-100 rounded-full p-1 flex">
-            <button
-              onClick={() => setIsCustomResume(true)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                isCustomResume ? 'bg-white text-[#1B3A4B] shadow-sm' : 'text-gray-500'
-              }`}
-            >
-              Custom Resume
-            </button>
-            <button
-              onClick={() => setIsCustomResume(false)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                !isCustomResume ? 'bg-white text-[#1B3A4B] shadow-sm' : 'text-gray-500'
-              }`}
-            >
-              No Custom Resume
-            </button>
-          </div>
-        </div>
-
-        {/* Plan Type Label */}
-        <div className="text-center mb-8">
-          <h3 className="text-lg font-semibold text-[#1B3A4B]">
-            {isCustomResume ? 'Custom Resume Plans' : 'No Custom Resume Plans'}
-          </h3>
-          {plans.some(p => p.clientDelegated) && (
-            <p className="text-xs text-gray-400 mt-1">Client-Delegated Jobs Required — You send job links. We handle the rest.</p>
-          )}
         </div>
 
         {/* Pricing Cards */}
@@ -70,13 +110,6 @@ const PricingSection = () => {
                   </span>
                 </div>
               )}
-              {plan.gradOffer && (
-                <div className="absolute -top-3 right-4">
-                  <span className="bg-yellow-400 text-yellow-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                    Grad Offer
-                  </span>
-                </div>
-              )}
 
               {/* Client Delegated Badge */}
               {plan.clientDelegated && (
@@ -90,21 +123,14 @@ const PricingSection = () => {
               <h4 className="text-xl font-bold text-[#1B3A4B] mb-1">{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-3xl font-bold text-[#1B3A4B]">
-                  ${plan.price.USD}
+                  ${plan.price}
                 </span>
                 <span className="text-sm text-gray-400">/ {plan.duration}</span>
               </div>
-              <p className="text-xs text-gray-400 mb-1">{plan.perDay.USD} per day</p>
+              <p className="text-xs text-gray-400 mb-1">{plan.perDay} per day</p>
               <p className="text-xs text-[#0D9488] font-medium mb-4">{plan.jobs}</p>
 
-              <p className="text-xs text-gray-500 mb-4">
-                {i === 0 && isCustomResume ? 'Comprehensive job search with resume editing for each application.' :
-                 i === 1 && isCustomResume ? 'The ultimate package for a comprehensive job search strategy.' :
-                 i === 2 && isCustomResume ? 'All-inclusive service with unlimited revisions.' :
-                 i === 0 && !isCustomResume ? 'Perfect for getting started with your job search journey.' :
-                 i === 1 && !isCustomResume ? 'Great value with 999 jobs for 100 days.' :
-                 'Ideal for those who are actively applying.'}
-              </p>
+              <p className="text-xs text-gray-500 mb-4">{plan.description}</p>
 
               <ul className="space-y-2 mb-6">
                 {plan.features.map((feat, fi) => (
@@ -116,17 +142,17 @@ const PricingSection = () => {
               </ul>
 
               <button
-                onClick={() => setExpandedPlan(expandedPlan === `${isCustomResume}-${i}` ? null : `${isCustomResume}-${i}`)}
+                onClick={() => setExpandedPlan(expandedPlan === i ? null : i)}
                 className="text-xs text-[#0D9488] font-medium flex items-center gap-1 mb-4 hover:underline"
               >
-                {expandedPlan === `${isCustomResume}-${i}` ? 'Hide' : 'See All'} Features
-                {expandedPlan === `${isCustomResume}-${i}` ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+                {expandedPlan === i ? 'Hide' : 'See All'} Features
+                {expandedPlan === i ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
               </button>
 
-              {expandedPlan === `${isCustomResume}-${i}` && (
+              {expandedPlan === i && (
                 <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                   <ul className="space-y-1.5">
-                    {['Google Drive Access & Organization', 'Dedicated Human Application Expert', 'WhatsApp Group for Updates', 'Cover Letter Customization'].map((f, fi) => (
+                    {plan.extraFeatures.map((f, fi) => (
                       <li key={fi} className="flex items-center gap-2">
                         <Check size={12} className="text-[#0D9488]" />
                         <span className="text-[11px] text-gray-500">{f}</span>
