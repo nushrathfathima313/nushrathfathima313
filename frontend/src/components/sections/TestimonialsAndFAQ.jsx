@@ -39,7 +39,7 @@ const TestimonialsAndFAQ = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section id="faq" className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1B3A4B] mb-2">
@@ -104,33 +104,63 @@ const TestimonialsAndFAQ = () => {
       {/* Footer */}
       <footer className="py-12 bg-[#15303D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h4 className="text-white font-bold text-lg mb-2">Jobnexa</h4>
               <p className="text-gray-400 text-xs">Building Futures. Connecting Careers.</p>
               <p className="text-gray-400 text-xs mt-2">Your career journey starts here</p>
             </div>
             <div>
-              <h5 className="text-white text-sm font-semibold mb-3">Product</h5>
-              <ul className="space-y-2">
-                {['Dashboard', 'Resume Builder', 'Interview Prep', 'Learning Center'].map((link, i) => (
-                  <li key={i}><button className="text-gray-400 text-xs hover:text-white transition-colors">{link}</button></li>
-                ))}
-              </ul>
-            </div>
-            <div>
               <h5 className="text-white text-sm font-semibold mb-3">Company</h5>
               <ul className="space-y-2">
-                {['About Us', 'Careers', 'Blog', 'Contact'].map((link, i) => (
-                  <li key={i}><button className="text-gray-400 text-xs hover:text-white transition-colors">{link}</button></li>
+                {[
+                  { label: 'About Us', href: '#why-jobnexa' },
+                  { label: 'How It Works', href: '#how-it-works' },
+                  { label: 'Pricing', href: '#pricing' },
+                  { label: 'Contact', href: 'mailto:sales@jobnexa.com' },
+                ].map((link, i) => (
+                  <li key={i}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
             <div>
               <h5 className="text-white text-sm font-semibold mb-3">Support</h5>
               <ul className="space-y-2">
-                {['Help Center', 'Terms of Service', 'Privacy Policy', 'FAQ'].map((link, i) => (
-                  <li key={i}><button className="text-gray-400 text-xs hover:text-white transition-colors">{link}</button></li>
+                {[
+                  { label: 'WhatsApp Us', href: 'https://wa.me/919494286653?text=Hi%20Jobnexa%20I%E2%80%99d%20like%20more%20information%20about%20your%20services' },
+                  { label: 'Terms of Service', href: '#' },
+                  { label: 'Privacy Policy', href: '#' },
+                  { label: 'FAQ', href: '#faq' },
+                ].map((link, i) => (
+                  <li key={i}>
+                    <a
+                      href={link.href}
+                      target={link.href.startsWith('http') ? '_blank' : undefined}
+                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      onClick={(e) => {
+                        if (link.href.startsWith('#') && link.href !== '#') {
+                          e.preventDefault();
+                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
