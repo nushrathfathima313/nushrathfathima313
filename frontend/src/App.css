@@ -59,10 +59,7 @@ section {
   position: relative;
 }
 
-/* WhatsApp floating button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 40;
+/* Hide external badges */
+#emergent-badge {
+  display: none !important;
 }
