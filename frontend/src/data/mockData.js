@@ -237,12 +237,8 @@ export const faqs = [
     answer: 'Our dedicated team manually applies to jobs for you. Each application includes a custom-tailored resume built specifically for the role. No bots, no Easy Apply — every submission is handled by a human expert.',
   },
   {
-    question: 'What is the Personalised Dashboard?',
-    answer: 'Your dashboard is a centralized hub where you can view all applied jobs, tailored resumes, submission proofs, company responses, and recruiter outreach — all in one place.',
-  },
-  {
     question: 'How many jobs will be applied per day?',
-    answer: 'Depending on your plan, we apply to 25-45+ jobs daily. Our Falcon plans offer 999 total applications over 100 days with client-delegated job links.',
+    answer: 'Depending on your plan, we apply to 30+ jobs daily. Our Falcon plans offer 780 total applications over 30 days with client-delegated job links.',
   },
   {
     question: 'Do you take a percentage of my salary after placement?',
@@ -254,7 +250,7 @@ export const faqs = [
   },
   {
     question: 'What kind of support do I get?',
-    answer: 'You get a dedicated WhatsApp group or Slack Channel for quick updates, plus a ticketing system for tracking requests, issues, and follow-ups throughout your 100-day journey.',
+    answer: 'You get a dedicated WhatsApp group or Slack Channel for quick updates, plus a ticketing system for tracking requests, issues, and follow-ups throughout your 30-day journey.',
   },
 ];
 
