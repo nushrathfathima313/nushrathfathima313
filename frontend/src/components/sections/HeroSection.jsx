@@ -22,7 +22,7 @@ const HeroSection = () => {
             {[
               { icon: FileCheck, text: 'Tailored Resume for Each Role' },
               { icon: PenTool, text: 'Custom Cover Letters' },
-              { icon: Briefcase, text: '30-45+ Applications Daily' },
+              { icon: Briefcase, text: '30+ Applications Daily' },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-sm border border-gray-100">
                 <item.icon size={16} className="text-[#0D9488]" />

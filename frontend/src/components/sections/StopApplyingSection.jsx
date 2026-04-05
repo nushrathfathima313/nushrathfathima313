@@ -76,7 +76,7 @@ const StopApplyingSection = () => {
                   { text: 'Resume tailored for each job role', icon: FileCheck },
                   { text: 'Cover letter customized per company', icon: FileCheck },
                   { text: 'Every application submitted manually', icon: Send },
-                  { text: '30-45+ quality applications daily', icon: Briefcase },
+                  { text: '30+ quality applications daily', icon: Briefcase },
                   { text: 'Updates shared via WhatsApp & Drive', icon: CheckCircle },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-[#0D9488]/5">

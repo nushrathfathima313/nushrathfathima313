@@ -1,4 +1,4 @@
-export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_jobnexa-portal/artifacts/aixqgs52_unnamed-removebg-preview.png';
+export const LOGO_URL = 'https://customer-assets.emergentagent.com/job_jobnexa-portal/artifacts/pt0sy104_Untitled%20design%20%2814%29.png';
 
 export const navLinks = [
   { label: 'Why Jobnexa', href: '#why-jobnexa' },

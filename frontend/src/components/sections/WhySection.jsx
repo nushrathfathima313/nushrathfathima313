@@ -23,7 +23,6 @@ const whyFeatures = [
     features: [
       { title: 'Fast Processing', desc: 'Applications submitted within 15 minutes of your request.', icon: Clock },
       { title: 'Expert Review', desc: 'Every link is checked by a human expert before applying.', icon: Shield },
-      { title: 'Unlimited', desc: 'No caps on how many jobs you can send us daily.', icon: CheckCircle },
     ],
   },
   {
