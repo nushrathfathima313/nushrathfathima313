@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 shrink-0">
-            <img src={LOGO_URL} alt="Jobnexa" className="h-12 w-auto object-contain" />
+            <img src={LOGO_URL} alt="Jobnexa" className="h-12 md:h-14 w-auto object-contain"/>
           </a>
 
           {/* Desktop Nav */}

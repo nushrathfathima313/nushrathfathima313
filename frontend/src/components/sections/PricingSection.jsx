@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { pricingPlans, currencySymbols } from '../../data/mockData';
+import { pricingPlans } from '../../data/mockData';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 const PricingSection = () => {
   const [isCustomResume, setIsCustomResume] = useState(true);
-  const [currency, setCurrency] = useState('USD');
   const [expandedPlan, setExpandedPlan] = useState(null);
 
   const plans = isCustomResume ? pricingPlans.customResume : pricingPlans.noCustomResume;
-  const sym = currencySymbols[currency];
 
   return (
     <section id="pricing" className="py-20 bg-white">
@@ -24,7 +22,7 @@ const PricingSection = () => {
         </div>
 
         {/* Toggle Custom Resume */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-10">
           <div className="bg-gray-100 rounded-full p-1 flex">
             <button
               onClick={() => setIsCustomResume(true)}
@@ -43,23 +41,6 @@ const PricingSection = () => {
               No Custom Resume
             </button>
           </div>
-        </div>
-
-        {/* Currency Selector */}
-        <div className="flex justify-center gap-2 mb-10">
-          {['USD', 'CAD', 'AUD', 'INR'].map((cur) => (
-            <button
-              key={cur}
-              onClick={() => setCurrency(cur)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
-                currency === cur
-                  ? 'bg-[#1B3A4B] text-white'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-              }`}
-            >
-              {cur === 'USD' ? '🇺🇸' : cur === 'CAD' ? '🇨🇦' : cur === 'AUD' ? '🇦🇺' : '🇮🇳'} {cur}
-            </button>
-          ))}
         </div>
 
         {/* Plan Type Label */}
@@ -109,11 +90,11 @@ const PricingSection = () => {
               <h4 className="text-xl font-bold text-[#1B3A4B] mb-1">{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-3xl font-bold text-[#1B3A4B]">
-                  {sym}{plan.price[currency]}
+                  ${plan.price.USD}
                 </span>
                 <span className="text-sm text-gray-400">/ {plan.duration}</span>
               </div>
-              <p className="text-xs text-gray-400 mb-1">{plan.perDay[currency]} per day</p>
+              <p className="text-xs text-gray-400 mb-1">{plan.perDay.USD} per day</p>
               <p className="text-xs text-[#0D9488] font-medium mb-4">{plan.jobs}</p>
 
               <p className="text-xs text-gray-500 mb-4">
@@ -145,7 +126,7 @@ const PricingSection = () => {
               {expandedPlan === `${isCustomResume}-${i}` && (
                 <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                   <ul className="space-y-1.5">
-                    {['Jobnexa\'s Personalised Dashboard', 'Dedicated Human Application Expert', 'Interview Prep & Learning Center', 'WhatsApp/Slack Channel Support'].map((f, fi) => (
+                    {['Google Drive Access & Organization', 'Dedicated Human Application Expert', 'WhatsApp Group for Updates', 'Cover Letter Customization'].map((f, fi) => (
                       <li key={fi} className="flex items-center gap-2">
                         <Check size={12} className="text-[#0D9488]" />
                         <span className="text-[11px] text-gray-500">{f}</span>

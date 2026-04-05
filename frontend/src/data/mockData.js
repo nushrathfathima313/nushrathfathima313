@@ -135,7 +135,7 @@ export const pricingPlans = {
       features: [
         '999 jobs for 100 days',
         'Resume Editing for Each Application',
-        'Jobnexa\'s Personalised Dashboard',
+        'Cover Letter Customization',
         'No Limit on Job titles or Categories',
       ],
       popular: false,
@@ -180,7 +180,7 @@ export const pricingPlans = {
       jobs: '~2.0k jobs',
       features: [
         '25+ Applications a day',
-        'Jobnexa\'s Personalised Dashboard',
+        'Google Drive & WhatsApp Updates',
         '1 Job Title or Category',
         'Dedicated Human Application Expert',
       ],
@@ -194,7 +194,7 @@ export const pricingPlans = {
       jobs: '999 jobs',
       features: [
         '999 jobs for 100 days',
-        'Jobnexa\'s Personalised Dashboard',
+        'Google Drive & WhatsApp Updates',
         '3 Job Title or Category',
         'Dedicated Human Application Expert',
       ],

@@ -1,14 +1,50 @@
 import React from 'react';
-import { whyFeatures } from '../../data/mockData';
-import { LayoutDashboard, FileText, Zap, DollarSign, GraduationCap, Headphones, CheckCircle, Clock, Shield, ChevronRight } from 'lucide-react';
+import { FileText, PenTool, MessageCircle, DollarSign, Users, Clock, CheckCircle, Shield, ChevronRight, FolderOpen, Send } from 'lucide-react';
 
-const featureIcons = [
-  <LayoutDashboard size={20} />,
-  <FileText size={20} />,
-  <Zap size={20} />,
-  <DollarSign size={20} />,
-  <GraduationCap size={20} />,
-  <Headphones size={20} />,
+const whyFeatures = [
+  {
+    icon: <FileText size={20} />,
+    title: 'Manually Tailored Resumes',
+    titleAccent: 'For Every Single Application',
+    description: 'No templates, no auto-fill. Our team manually edits and tailors your resume for each specific job role — highlighting the right skills, keywords, and experience that match the job description.',
+    highlight: 'Every resume is crafted by a real person, not a bot.',
+  },
+  {
+    icon: <PenTool size={20} />,
+    title: 'Custom Cover Letters',
+    titleAccent: 'That Actually Get Read',
+    description: 'We write personalized cover letters for each application — addressing the company, the role, and why you\'re the right fit. No generic templates. Every letter is unique and compelling.',
+    highlight: 'Handwritten cover letters for every job application.',
+  },
+  {
+    icon: <Send size={20} />,
+    title: 'On-Demand Job Applications',
+    subtitle: 'See a role you like? Consider it applied.',
+    features: [
+      { title: 'Fast Processing', desc: 'Applications submitted within 15 minutes of your request.', icon: Clock },
+      { title: 'Expert Review', desc: 'Every link is checked by a human expert before applying.', icon: Shield },
+      { title: 'Unlimited', desc: 'No caps on how many jobs you can send us daily.', icon: CheckCircle },
+    ],
+  },
+  {
+    icon: <DollarSign size={20} />,
+    title: 'No Percentage Games',
+    subtitle: 'Simple pricing. Zero surprises.',
+    description: 'Choose a plan and pay once. No commissions. No salary cuts after placement. No hidden fees. Everything is clear, upfront, and transparent from day one.',
+  },
+  {
+    icon: <FolderOpen size={20} />,
+    title: 'Google Drive +',
+    titleAccent: 'WhatsApp Updates',
+    description: 'All your application details, tailored resumes, cover letters, and submission proofs are organized in a shared Google Drive folder. Get real-time updates, status reports, and quick communication through a dedicated WhatsApp group.',
+    highlight: 'Everything accessible via Google Drive & WhatsApp — no logins needed.',
+  },
+  {
+    icon: <Users size={20} />,
+    title: 'Dedicated Support:',
+    titleAccent: 'WhatsApp + Ticketing',
+    description: 'Get a dedicated WhatsApp group for quick updates, questions, and direct communication with your application team. Plus a ticketing system for tracking requests, issues, and follow-ups throughout your journey.',
+  },
 ];
 
 const WhySection = () => {
@@ -31,7 +67,7 @@ const WhySection = () => {
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-[#0D9488]/10 rounded-xl flex items-center justify-center text-[#0D9488]">
-                    {featureIcons[index]}
+                    {feature.icon}
                   </div>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#1B3A4B] mb-1">
@@ -48,9 +84,6 @@ const WhySection = () => {
                 {feature.description && (
                   <p className="text-gray-500 leading-relaxed mb-4">{feature.description}</p>
                 )}
-                {feature.subDescription && (
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">{feature.subDescription}</p>
-                )}
                 {feature.highlight && (
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-2 h-2 bg-[#0D9488] rounded-full"></div>
@@ -62,9 +95,7 @@ const WhySection = () => {
                     {feature.features.map((f, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <div className="w-6 h-6 bg-[#0D9488]/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          {i === 0 ? <Clock size={12} className="text-[#0D9488]" /> :
-                           i === 1 ? <Shield size={12} className="text-[#0D9488]" /> :
-                           <CheckCircle size={12} className="text-[#0D9488]" />}
+                          <f.icon size={12} className="text-[#0D9488]" />
                         </div>
                         <div>
                           <h4 className="text-sm font-semibold text-[#1B3A4B]">{f.title}</h4>
@@ -90,31 +121,41 @@ const WhySection = () => {
 
 const WhyFeatureVisual = ({ index }) => {
   const visuals = [
-    // Personalized Dashboard Visual
+    // Tailored Resumes Visual
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 max-w-md mx-auto">
-      <h4 className="text-sm font-bold text-[#1B3A4B] mb-3">Applied Jobs (3)</h4>
-      {['Senior UI/UX Designer - Acme Corp', 'Product Manager - TechSolutions', 'Frontend Developer - InnovateX'].map((job, i) => (
-        <div key={i} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
-          <span className="text-xs text-gray-600">{job}</span>
-          <span className={`text-[10px] px-2 py-0.5 rounded-full ${i === 1 ? 'bg-yellow-50 text-yellow-600' : 'bg-blue-50 text-blue-600'}`}>
-            {i === 1 ? 'Under Review' : 'Pending'}
-          </span>
+      <h4 className="text-sm font-bold text-[#1B3A4B] mb-3">Resumes Tailored Per Role</h4>
+      {[
+        { role: 'Software Engineer - Google', file: 'Resume_SWE_Google.pdf', match: '95% Match' },
+        { role: 'Product Manager - Amazon', file: 'Resume_PM_Amazon.pdf', match: '92% Match' },
+        { role: 'Data Analyst - Microsoft', file: 'Resume_DA_Microsoft.pdf', match: '89% Match' },
+      ].map((item, i) => (
+        <div key={i} className="flex items-center justify-between py-3 border-b border-gray-50 last:border-0">
+          <div>
+            <p className="text-xs font-medium text-gray-700">{item.role}</p>
+            <p className="text-[10px] text-gray-400">{item.file}</p>
+          </div>
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-50 text-green-600 font-medium">{item.match}</span>
         </div>
       ))}
-      <div className="mt-4">
-        <h4 className="text-sm font-bold text-[#1B3A4B] mb-2">Responses (3)</h4>
-        {[{ c: 'Amazon', r: 'Interview', color: 'green' }, { c: 'Google', r: 'Call', color: 'blue' }, { c: 'Microsoft', r: 'Task', color: 'yellow' }].map((item, i) => (
-          <div key={i} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
-            <span className="text-xs text-gray-600">{item.c}</span>
-            <span className={`text-[10px] px-2 py-0.5 rounded-full bg-${item.color}-50 text-${item.color}-600`}>{item.r}</span>
-          </div>
-        ))}
+    </div>,
+
+    // Cover Letter Visual
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 max-w-md mx-auto">
+      <div className="flex items-center gap-2 mb-4">
+        <PenTool size={16} className="text-[#0D9488]" />
+        <h4 className="text-sm font-bold text-[#1B3A4B]">Cover Letter Preview</h4>
+      </div>
+      <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600 leading-relaxed space-y-2">
+        <p className="font-medium text-gray-800">Dear Hiring Manager at Google,</p>
+        <p>I am excited to apply for the Software Engineer position. With 3+ years of experience in full-stack development and a passion for building scalable systems...</p>
+        <p className="text-gray-400 italic">...tailored specifically to the role requirements...</p>
+        <div className="flex items-center gap-2 mt-3 pt-2 border-t border-gray-200">
+          <CheckCircle size={12} className="text-green-500" />
+          <span className="text-[10px] text-green-600 font-medium">Customized for each application</span>
+        </div>
       </div>
     </div>,
-    // Custom Resume Visual
-    <div className="rounded-2xl overflow-hidden shadow-lg">
-      <img src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=600&h=400&fit=crop" alt="Resume workspace" className="w-full h-72 object-cover" />
-    </div>,
+
     // On-Demand Visual
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 max-w-md mx-auto">
       <div className="space-y-3">
@@ -127,40 +168,68 @@ const WhyFeatureVisual = ({ index }) => {
               <p className="text-xs font-semibold text-gray-800">{job.t}</p>
               <p className="text-[10px] text-gray-400">{job.c} • {job.l}</p>
             </div>
-            <span className={`text-[10px] px-2 py-0.5 rounded-full bg-${job.color}-50 text-${job.color}-600 font-medium`}>{job.s}</span>
+            <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
+              job.color === 'green' ? 'bg-green-50 text-green-600' :
+              job.color === 'blue' ? 'bg-blue-50 text-blue-600' :
+              'bg-yellow-50 text-yellow-600'
+            }`}>{job.s}</span>
           </div>
         ))}
       </div>
     </div>,
+
     // No Percentage Visual
-    <div className="rounded-2xl overflow-hidden shadow-lg">
-      <img src="https://images.pexels.com/photos/7581115/pexels-photo-7581115.jpeg?w=600&h=400&fit=crop" alt="Professional" className="w-full h-72 object-cover" />
-    </div>,
-    // Portfolio Visual
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 max-w-md mx-auto">
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-xs font-medium bg-[#0D9488]/10 text-[#0D9488] px-2 py-1 rounded">Learning Path: Full Stack</span>
-      </div>
-      <div className="flex gap-2 mb-4">
-        {['R', 'JS', 'N'].map((t, i) => (
-          <div key={i} className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white ${
-            i === 0 ? 'bg-blue-500' : i === 1 ? 'bg-yellow-500' : 'bg-green-500'
-          }`}>{t}</div>
+      <h4 className="text-sm font-bold text-[#1B3A4B] mb-4">Transparent Pricing</h4>
+      <div className="space-y-3">
+        {[
+          { label: 'Commission on salary', value: '0%', good: true },
+          { label: 'Hidden fees', value: 'None', good: true },
+          { label: 'Salary cuts after placement', value: 'Never', good: true },
+          { label: 'Pay once, get full service', value: 'Yes', good: true },
+        ].map((item, i) => (
+          <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-green-50/50">
+            <span className="text-xs text-gray-600">{item.label}</span>
+            <span className="text-xs font-bold text-green-600">{item.value}</span>
+          </div>
         ))}
       </div>
-      <div className="bg-gray-50 rounded-xl p-4 mb-3">
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-          <span className="text-xs font-medium text-gray-700">Live Interview</span>
+    </div>,
+
+    // Google Drive + WhatsApp Visual
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 max-w-md mx-auto">
+      <div className="space-y-4">
+        <div className="bg-[#F0F7FA] rounded-lg p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <FolderOpen size={14} className="text-[#0D9488]" />
+            <span className="text-xs font-bold text-[#1B3A4B]">Shared Google Drive</span>
+          </div>
+          <div className="space-y-2">
+            {['Tailored_Resumes/', 'Cover_Letters/', 'Submission_Proofs/', 'Application_Tracker.xlsx'].map((f, i) => (
+              <div key={i} className="flex items-center gap-2 text-[10px] text-gray-500 bg-white rounded px-2 py-1.5">
+                <FileText size={10} className="text-gray-400" />
+                {f}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="w-12 h-12 bg-gray-200 rounded-full mx-auto mb-2"></div>
-        <p className="text-[10px] text-gray-400 text-center">Mock session in progress...</p>
-      </div>
-      <div className="flex items-center gap-2">
-        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-        <span className="text-xs text-gray-500">Portfolio Online</span>
+        <div className="bg-green-50 rounded-lg p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <MessageCircle size={14} className="text-green-600" />
+            <span className="text-xs font-bold text-gray-800">WhatsApp Group</span>
+          </div>
+          <div className="space-y-2">
+            <div className="bg-white rounded-lg p-2 text-[10px] text-gray-600">
+              <span className="font-medium text-green-600">Jobnexa Team:</span> Applied to 12 jobs today! Check Drive for proofs.
+            </div>
+            <div className="bg-white rounded-lg p-2 text-[10px] text-gray-600">
+              <span className="font-medium text-green-600">Jobnexa Team:</span> Google responded — phone screen scheduled!
+            </div>
+          </div>
+        </div>
       </div>
     </div>,
+
     // Dedicated Support Visual
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 max-w-md mx-auto">
       <div className="bg-[#0D9488]/5 rounded-lg p-3 mb-3">
@@ -173,7 +242,7 @@ const WhyFeatureVisual = ({ index }) => {
           <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-[8px]">SA</div>
           <div>
             <p className="text-xs font-semibold text-gray-800">Support Agent</p>
-            <p className="text-[10px] text-gray-500">I've updated your resume review status. Check your WhatsApp group for the link!</p>
+            <p className="text-[10px] text-gray-500">Resume updated and uploaded to your Drive folder. 8 new applications submitted today!</p>
           </div>
         </div>
       </div>
@@ -182,7 +251,7 @@ const WhyFeatureVisual = ({ index }) => {
           <span className="text-xs font-medium text-gray-700">Ticket #402</span>
           <span className="text-[10px] bg-green-50 text-green-600 px-2 py-0.5 rounded-full">Resolved</span>
         </div>
-        <p className="text-[10px] text-gray-500">Profile Review</p>
+        <p className="text-[10px] text-gray-500">Cover Letter Review</p>
         <p className="text-[10px] text-gray-400 mt-1">Status: Complete • Updated: 2m ago</p>
       </div>
     </div>,

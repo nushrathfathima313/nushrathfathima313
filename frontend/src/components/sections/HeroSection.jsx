@@ -1,6 +1,6 @@
 import React from 'react';
 import { appliedJobs, resumes, submissions, responses, recruiters } from '../../data/mockData';
-import { FileText, Download, Eye, ExternalLink, Mail, ChevronRight } from 'lucide-react';
+import { FileText, Download, Eye, ExternalLink, Mail, ChevronRight, Target } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -9,26 +9,22 @@ const HeroSection = () => {
         {/* Hero Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1B3A4B] mb-4 leading-tight">
-            One Login One Dashboard
+            Quality Applications, <br className="hidden md:block" />More Interviews
           </h1>
           <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
-            Everything about your job search, in one place
+            We manually apply to jobs on your behalf — tailoring every resume & cover letter
           </p>
           <p className="text-sm text-gray-400 mt-3 max-w-xl mx-auto">
-            Track job applications, resumes, interviews, status updates and learning center in one centralized dashboard.
+            More quality applications = More interviews = Closer to the job. Join 5K+ job seekers who landed their dream roles.
           </p>
-          <button className="mt-6 inline-flex items-center gap-2 bg-[#1B3A4B] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#15303D] transition-colors duration-200">
-            Explore Dashboard
-            <ChevronRight size={16} />
-          </button>
         </div>
 
-        {/* Dashboard Preview Grid */}
+        {/* Preview Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {/* Resume Access Card */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow duration-300">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-[#1B3A4B] text-sm">Resume Access</h3>
+              <h3 className="font-semibold text-[#1B3A4B] text-sm">Tailored Resumes</h3>
               <span className="text-xs text-gray-400">All Resumes</span>
             </div>
             <div className="space-y-3">
@@ -52,7 +48,7 @@ const HeroSection = () => {
 
           {/* View Submissions Card */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow duration-300">
-            <h3 className="font-semibold text-[#1B3A4B] text-sm mb-4">View Submissions</h3>
+            <h3 className="font-semibold text-[#1B3A4B] text-sm mb-4">Submission Proofs</h3>
             <table className="w-full">
               <thead>
                 <tr className="text-[10px] text-gray-400 uppercase">
@@ -79,7 +75,7 @@ const HeroSection = () => {
 
           {/* Access Responses Card */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow duration-300">
-            <h3 className="font-semibold text-[#1B3A4B] text-sm mb-4">Access Responses</h3>
+            <h3 className="font-semibold text-[#1B3A4B] text-sm mb-4">Company Responses</h3>
             <table className="w-full">
               <thead>
                 <tr className="text-[10px] text-gray-400 uppercase">
@@ -138,7 +134,7 @@ const HeroSection = () => {
           {/* Applied Jobs Card - spans 2 cols */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow duration-300 md:col-span-2 lg:col-span-2">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-[#1B3A4B] text-sm">Applied Jobs</h3>
+              <h3 className="font-semibold text-[#1B3A4B] text-sm">Jobs Applied On Your Behalf</h3>
               <div className="flex gap-2 text-[10px] text-gray-400">
                 <span>Date View</span>
                 <span>Company View</span>
