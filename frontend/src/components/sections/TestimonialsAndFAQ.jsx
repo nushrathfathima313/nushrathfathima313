@@ -114,24 +114,31 @@ const TestimonialsAndFAQ = () => {
               <h5 className="text-white text-sm font-semibold mb-3">Company</h5>
               <ul className="space-y-2">
                 {[
-                  { label: 'About Us', href: '#why-jobnexa' },
+                  { label: 'About Us', href: '/about' },
                   { label: 'How It Works', href: '#how-it-works' },
                   { label: 'Pricing', href: '#pricing' },
                   { label: 'Contact', href: 'mailto:sales@jobnexa.com' },
                 ].map((link, i) => (
                   <li key={i}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => {
-                        if (link.href.startsWith('#')) {
+                    {link.href.startsWith('#') ? (
+                      <a
+                        href={link.href}
+                        onClick={(e) => {
                           e.preventDefault();
                           document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }}
-                      className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
-                    >
-                      {link.label}
-                    </a>
+                        }}
+                        className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

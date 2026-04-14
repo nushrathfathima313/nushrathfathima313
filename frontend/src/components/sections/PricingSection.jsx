@@ -60,7 +60,7 @@ const plans = [
     features: [
       'Everything in Premium and',
       '3.1k jobs for 120 days',
-      '30+ Applications a day',
+      '45+ Applications a day',
       'Resume Editing for Each Application',
       'Cover Letter Customization',
       '10+ Guaranteed Interviews',
