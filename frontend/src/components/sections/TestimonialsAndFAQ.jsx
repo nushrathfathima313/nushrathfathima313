@@ -25,11 +25,11 @@ const TestimonialsAndFAQ = () => {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-[#1B3A4B] rounded-full flex items-center justify-center text-white text-xs font-bold">
-                    {t.role.charAt(0)}{t.role.split(' ')[1]?.charAt(0) || ''}
+                    {t.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#1B3A4B]">{t.role}</p>
-                    <p className="text-xs text-gray-400">{t.company}</p>
+                    <p className="text-sm font-semibold text-[#1B3A4B]">{t.name}</p>
+                    <p className="text-xs text-gray-400">{t.role}</p>
                   </div>
                 </div>
               </div>

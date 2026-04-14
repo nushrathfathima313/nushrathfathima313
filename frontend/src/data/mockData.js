@@ -220,14 +220,14 @@ export const pricingPlans = {
 
 export const testimonials = [
   {
-    quote: 'What stood out about Jobnexa was accountability. Every step was tracked, every update was communicated clearly, and I always knew what was happening next. The process was structured and predictable, which made the job search far less stressful.',
-    role: 'Software Engineer',
-    company: 'Amazon',
+    quote: 'I didn\'t have time to apply for jobs daily. Jobnexa handled everything for me, and within weeks I started getting more responses.',
+    name: 'Rahul',
+    role: 'Software Developer',
   },
   {
-    quote: 'Jobnexa focuses heavily on process over hype. Instead of promising results, they focused on building things the right way — resume structure, preparation flow, and consistent follow-ups. That discipline made a big difference.',
-    role: 'Data Engineer',
-    company: 'Goldman Sachs',
+    quote: 'Consistent applications made a big difference. I was able to focus on interview prep while they handled the process.',
+    name: 'Priya',
+    role: 'Data Analyst',
   },
 ];
 

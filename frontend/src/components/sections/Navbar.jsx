@@ -42,10 +42,8 @@ const Navbar = () => {
                 {link.label}
               </button>
             ))}
-            <button className="text-sm font-medium text-white bg-[#0D9488] hover:bg-[#0B7C72] px-4 py-2 rounded-full transition-colors duration-200 flex items-center gap-1">
-              Resume Builder
-              <span className="text-[10px] bg-white text-[#0D9488] px-1.5 py-0.5 rounded-full font-bold ml-1">New</span>
-            </button>
+           
+              
           </div>
 
           {/* Desktop Actions */}
