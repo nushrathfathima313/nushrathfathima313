@@ -33,15 +33,18 @@ const HeroSection = () => {
                 { icon: FileCheck, text: 'Tailored Resume for Each Role' },
                 { icon: PenTool, text: 'Custom Cover Letters' },
                 { icon: Briefcase, text: 'Strategic Job Applications' },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
-                  <item.icon size={14} className="text-[#0D9488]" />
-                  <span className="text-xs font-medium text-[#1B3A4B]">{item.text}</span>
-                </div>
-              ))}
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div key={i} className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+                    <Icon size={14} className="text-[#0D9488]" />
+                    <span className="text-xs font-medium text-[#1B3A4B]">{item.text}</span>
+                  </div>
+                );
+              })}
             </div>
 
-            {/* ✅ SINGLE CTA */}
+            {/* CTA */}
             <div>
               <a
                 href="https://wa.me/447825296249?text=Hi! I want help with job applications and getting interview calls."
@@ -58,7 +61,6 @@ const HeroSection = () => {
           {/* RIGHT SIDE IMAGE */}
           <div className="relative">
 
-            {/* Main Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=top"
@@ -68,8 +70,8 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B3A4B]/40 to-transparent"></div>
             </div>
 
-            {/* Floating Card - Top Right */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-float">
+            {/* Floating Card */}
+            <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
                   <CheckCircle size={18} className="text-green-500" />
@@ -81,8 +83,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Floating Card - Bottom Left */}
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100 animate-float-delayed">
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[#0D9488]/10 rounded-full flex items-center justify-center">
                   <Briefcase size={18} className="text-[#0D9488]" />
@@ -94,13 +95,11 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* ✅ SAFE BADGE */}
-            <div className="absolute top-1/2 -right-6 bg-[#0D9488] text-white rounded-full px-4 py-2 shadow-lg text-xs font-semibold animate-float">
+            <div className="absolute top-1/2 -right-6 bg-[#0D9488] text-white rounded-full px-4 py-2 shadow-lg text-xs font-semibold">
               Higher Interview Chances
             </div>
 
           </div>
-
         </div>
       </div>
     </section>
