@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { testimonials, faqs } from '../../data/mockData';
-import { ChevronDown, ChevronRight, MessageSquare, ArrowRight } from 'lucide-react';
+import { ChevronDown, MessageSquare } from 'lucide-react';
 
 const TestimonialsAndFAQ = () => {
   const [openFaq, setOpenFaq] = useState(null);
+
+  const whatsappNumber = '447825296249';
+
+  const handleWhatsAppClick = () => {
+    const message = "Hi! I want help with job applications and getting interview calls.";
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <>
@@ -79,25 +86,23 @@ const TestimonialsAndFAQ = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ✅ SINGLE CTA SECTION */}
       <section className="py-20 bg-[#1B3A4B]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Land Your Dream Job?
+            Ready to Start Getting Interview Calls?
           </h2>
           <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-            Stop waiting for opportunities to come to you. Take the first step with Jobnexa and actively shape your career path.
+            Stop wasting time applying randomly. Let us apply for you and get real interview opportunities.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#0D9488] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#0B7C72] transition-colors flex items-center gap-2 justify-center">
-              Get Started Now
-              <ArrowRight size={16} />
-            </button>
-            <button className="border border-white/30 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2 justify-center">
-              WhatsApp Us
-              <MessageSquare size={16} />
-            </button>
-          </div>
+
+          <button
+            onClick={handleWhatsAppClick}
+            className="bg-green-500 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-green-600 transition-colors flex items-center gap-2 justify-center mx-auto"
+          >
+            Chat on WhatsApp
+            <MessageSquare size={16} />
+          </button>
         </div>
       </section>
 
@@ -105,11 +110,13 @@ const TestimonialsAndFAQ = () => {
       <footer className="py-12 bg-[#15303D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
             <div>
               <h4 className="text-white font-bold text-lg mb-2">Jobnexa</h4>
               <p className="text-gray-400 text-xs">Building Futures. Connecting Careers.</p>
               <p className="text-gray-400 text-xs mt-2">Your career journey starts here</p>
             </div>
+
             <div>
               <h5 className="text-white text-sm font-semibold mb-3">Company</h5>
               <ul className="space-y-2">
@@ -117,48 +124,13 @@ const TestimonialsAndFAQ = () => {
                   { label: 'About Us', href: '/about' },
                   { label: 'How It Works', href: '#how-it-works' },
                   { label: 'Pricing', href: '#pricing' },
-                  { label: 'Contact', href: 'mailto:sales@jobnexa.com' },
-                ].map((link, i) => (
-                  <li key={i}>
-                    {link.href.startsWith('#') ? (
-                      <a
-                        href={link.href}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <a
-                        href={link.href}
-                        className="text-gray-400 text-xs hover:text-white transition-colors cursor-pointer"
-                      >
-                        {link.label}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h5 className="text-white text-sm font-semibold mb-3">Support</h5>
-              <ul className="space-y-2">
-                {[
-                  { label: 'WhatsApp Us', href: 'https://wa.me/919494286653?text=Hi%20Jobnexa%20I%E2%80%99d%20like%20more%20information%20about%20your%20services' },
-                  { label: 'Terms of Service', href: '#' },
-                  { label: 'Privacy Policy', href: '#' },
-                  { label: 'FAQ', href: '#faq' },
+                  { label: 'Contact', href: '#' },
                 ].map((link, i) => (
                   <li key={i}>
                     <a
                       href={link.href}
-                      target={link.href.startsWith('http') ? '_blank' : undefined}
-                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       onClick={(e) => {
-                        if (link.href.startsWith('#') && link.href !== '#') {
+                        if (link.href.startsWith('#')) {
                           e.preventDefault();
                           document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
                         }
@@ -171,9 +143,41 @@ const TestimonialsAndFAQ = () => {
                 ))}
               </ul>
             </div>
+
+            <div>
+              <h5 className="text-white text-sm font-semibold mb-3">Support</h5>
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    onClick={handleWhatsAppClick}
+                    className="text-gray-400 text-xs hover:text-white transition-colors"
+                  >
+                    WhatsApp Us
+                  </button>
+                </li>
+                <li className="text-gray-400 text-xs">Terms of Service</li>
+                <li className="text-gray-400 text-xs">Privacy Policy</li>
+                <li>
+                  <a
+                    href="#faq"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="text-gray-400 text-xs hover:text-white"
+                  >
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
+
           </div>
+
           <div className="border-t border-white/10 mt-8 pt-6 text-center">
-            <p className="text-gray-500 text-xs">© {new Date().getFullYear()} Jobnexa. All rights reserved.</p>
+            <p className="text-gray-500 text-xs">
+              © {new Date().getFullYear()} Jobnexa. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
