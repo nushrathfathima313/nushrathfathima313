@@ -5,9 +5,10 @@ const TeamSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Left Content */}
+          {/* LEFT CONTENT */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1B3A4B] mb-2">
               Your Personal Team for Landing the Job
@@ -23,6 +24,7 @@ const TeamSection = () => {
               so every application represents you at your best.
             </p>
 
+            {/* BUTTON FIXED (scroll to pricing) */}
             <a
               href="#pricing"
               className="inline-flex items-center gap-2 bg-[#1B3A4B] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#15303D] transition-colors duration-200"
@@ -32,53 +34,57 @@ const TeamSection = () => {
             </a>
           </div>
 
-          {/* Right Visual */}
+          {/* RIGHT VISUAL */}
           <div className="relative">
 
-            {/* Team Role Tags */}
+            {/* TEAM TAGS */}
             <div className="flex flex-wrap gap-2 mb-6 justify-center">
               {['Job Collector', 'Ops Manager', 'CS Manager', 'Resume Expert'].map((role, i) => (
-                <span key={i} className="bg-[#F0F7FA] text-[#1B3A4B] text-xs font-medium px-3 py-1.5 rounded-full border border-[#1B3A4B]/10">
+                <span
+                  key={i}
+                  className="bg-[#F0F7FA] text-[#1B3A4B] text-xs font-medium px-3 py-1.5 rounded-full border border-[#1B3A4B]/10"
+                >
                   {role}
                 </span>
               ))}
             </div>
 
-            {/* Team Images Grid */}
+            {/* IMAGE GRID */}
             <div className="grid grid-cols-2 gap-4">
-              
+
               {/* Image 1 */}
               <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop"
                   alt="Team collaboration"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover object-center"
                 />
               </div>
 
-              {/* Image 2 - FIXED: Restored to original clean height (h-48) */}
+              {/* Image 2 */}
               <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mt-8">
                 <img
                   src="https://images.pexels.com/photos/7581115/pexels-photo-7581115.jpeg?w=400&h=300&fit=crop"
                   alt="Professional workspace"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover object-center"
                 />
               </div>
 
-              {/* Image 3 - FIXED: Set to object-bottom and fixed syntax string error */}
+              {/* Image 3 (fixed crop) */}
               <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 col-span-2">
                 <img
                   src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=800&h=400&fit=crop"
                   alt="Professional working"
-                  className="w-full h-72 object-cover object-bottom" 
+                  className="w-full h-72 object-cover object-bottom"
                 />
               </div>
-            
+
             </div>
 
           </div>
 
         </div>
+
       </div>
     </section>
   );
