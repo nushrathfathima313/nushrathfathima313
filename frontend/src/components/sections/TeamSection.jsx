@@ -59,7 +59,7 @@ const TeamSection = () => {
                 <img
                   src="https://images.pexels.com/photos/7581115/pexels-photo-7581115.jpeg?w=400&h=300&fit=crop"
                   alt="Professional workspace"
-                  className="w-full h-48 object-cover"
+                 className="w-full h-72 object-cover object-bottom"
                 />
               </div>
 
