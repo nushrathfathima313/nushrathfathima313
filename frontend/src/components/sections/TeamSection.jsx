@@ -63,13 +63,14 @@ const TeamSection = () => {
                 />
               </div>
 
-              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 col-span-2">
-                <img
-                  src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=600&h=250&fit=crop"
-                  alt="Professional working"
-                  className="w-full h-72 object-cover object-center"
-                />
-              </div>
+             <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 col-span-2">
+  <img
+    src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=800&h=400&fit=crop"
+    alt="Professional working"
+    className="w-full h-72 object-cover object-center" 
+  />
+</div>
+            
             </div>
 
           </div>
