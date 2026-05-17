@@ -34,35 +34,37 @@ const TeamSection = () => {
           </div>
 
           {/* Right Visual */}
-          <div className="relative">
+         {/* Team Images Grid */}
+<div className="grid grid-cols-2 gap-4">
+  
+  {/* Image 1 (Left Column) */}
+  <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <img
+      src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop"
+      alt="Team collaboration"
+      className="w-full h-48 object-cover"
+    />
+  </div>
 
-            {/* Team Role Tags */}
-            <div className="flex flex-wrap gap-2 mb-6 justify-center">
-              {['Job Collector', 'Ops Manager', 'CS Manager', 'Resume Expert'].map((role, i) => (
-                <span key={i} className="bg-[#F0F7FA] text-[#1B3A4B] text-xs font-medium px-3 py-1.5 rounded-full border border-[#1B3A4B]/10">
-                  {role}
-                </span>
-              ))}
-            </div>
+  {/* Image 2 (Right Column) - Restored back to h-48 to fix its proportions */}
+  <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mt-8">
+    <img
+      src="https://images.pexels.com/photos/7581115/pexels-photo-7581115.jpeg?w=400&h=300&fit=crop"
+      alt="Professional workspace"
+      className="w-full h-48 object-cover"
+    />
+  </div>
 
-            {/* Team Images Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop"
-                  alt="Team collaboration"
-                  className="w-full h-48 object-cover"
-                />
-              </div>
-
-              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mt-8">
-                <img
-                  src="https://images.pexels.com/photos/7581115/pexels-photo-7581115.jpeg?w=400&h=300&fit=crop"
-                  alt="Professional workspace"
-                 className="w-full h-72 object-cover object-bottom"
-                />
-              </div>
-
+  {/* Image 3 (Bottom Full Width) - FIXED WITH object-bottom */}
+  <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 col-span-2">
+    <img
+      src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=800&h=400&fit=crop"
+      alt="Professional working"
+      className="w-full h-72 object-cover object-bottom" 
+    />
+  </div>
+  
+</div>
              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 col-span-2">
   <img
     src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=800&h=400&fit=crop"
