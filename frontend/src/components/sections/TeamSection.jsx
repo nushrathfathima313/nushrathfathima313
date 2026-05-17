@@ -67,7 +67,7 @@ const TeamSection = () => {
                 <img
                   src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=600&h=250&fit=crop"
                   alt="Professional working"
-                  className="w-full h-52 object-cover object-center"
+                  className="w-full h-60 object-cover object-center"
                 />
               </div>
             </div>
