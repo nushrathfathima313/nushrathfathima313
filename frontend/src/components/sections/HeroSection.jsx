@@ -5,7 +5,6 @@ const HeroSection = () => {
   return (
     <section className="pt-24 pb-16 bg-gradient-to-b from-[#F0F7FA] to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT CONTENT */}
@@ -45,33 +44,23 @@ const HeroSection = () => {
               })}
             </div>
 
-            {/* CTA SECTION (ONLY ONE BUTTON KEPT + LINK ADDED) */}
-            <div className="flex flex-col gap-4">
-
-              {/* Existing WhatsApp Button (UNCHANGED) */}
+            {/* CTA */}
+            <div>
               <a
                 href="https://wa.me/447825296249?text=Hi! I want help with job applications and getting interview calls."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-green-500 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-green-600 transition shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-green-600 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Get Interview Calls
                 <ArrowRight size={16} />
               </a>
-
-              {/* NEW: Scroll to Pricing */}
-              <a
-                href="#pricing"
-                className="text-center text-sm font-semibold text-[#0D9488] hover:underline"
-              >
-                View Plans & Pricing
-              </a>
-
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT SIDE IMAGE */}
           <div className="relative">
+
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=top"
@@ -80,8 +69,37 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B3A4B]/40 to-transparent"></div>
             </div>
-          </div>
 
+            {/* Floating Card */}
+            <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
+                  <CheckCircle size={18} className="text-green-500" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-[#1B3A4B]">3x</p>
+                  <p className="text-[10px] text-gray-400">Higher Interview Rate</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-gray-100">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#0D9488]/10 rounded-full flex items-center justify-center">
+                  <Briefcase size={18} className="text-[#0D9488]" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-[#1B3A4B]">350+</p>
+                  <p className="text-[10px] text-gray-400">Interviews Generated</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute top-1/2 -right-6 bg-[#0D9488] text-white rounded-full px-4 py-2 shadow-lg text-xs font-semibold">
+              Higher Interview Chances
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
