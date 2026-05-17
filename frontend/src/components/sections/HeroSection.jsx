@@ -45,9 +45,10 @@ const HeroSection = () => {
               })}
             </div>
 
-            {/* CTA BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA SECTION (ONLY ONE BUTTON KEPT + LINK ADDED) */}
+            <div className="flex flex-col gap-4">
 
+              {/* Existing WhatsApp Button (UNCHANGED) */}
               <a
                 href="https://wa.me/447825296249?text=Hi! I want help with job applications and getting interview calls."
                 target="_blank"
@@ -58,10 +59,10 @@ const HeroSection = () => {
                 <ArrowRight size={16} />
               </a>
 
-              {/* ✅ THIS IS THE FIXED BUTTON */}
+              {/* NEW: Scroll to Pricing */}
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium border-2 border-[#0D9488] text-[#0D9488] hover:bg-[#0D9488] hover:text-white transition"
+                className="text-center text-sm font-semibold text-[#0D9488] hover:underline"
               >
                 View Plans & Pricing
               </a>
