@@ -29,7 +29,7 @@ const HomePage = () => (
 
     {/* WhatsApp Floating Button */}
     <a
-      href="https://wa.me/919494286653?text=Hi%20Jobnexa%20I%E2%80%99d%20like%20more%20information%20about%20your%20services"
+      href="https://wa.me/447825296249?text=Hi%20Jobnexa%20I%E2%80%99d%20like%20more%20information%20about%20your%20services"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-white shadow-lg rounded-full px-4 py-3 border border-gray-100 hover:shadow-xl transition-shadow duration-300 group"
